@@ -24,4 +24,30 @@ describe('MathUtils', () => {
   test('lerp should return the interpolated value', () => {
     expect(MathUtils.lerp(1, 10, 0.5)).toBe(5.5);
   });
+
+  test('randomInt should return an integer within the specified range', () => {
+    const min = 1;
+    const max = 10;
+    const value = MathUtils.randomInt(min, max);
+    expect(value).toBeGreaterThanOrEqual(min);
+    expect(value).toBeLessThanOrEqual(max);
+    expect(Number.isInteger(value)).toBe(true);
+  });
+
+  test('randomInt should handle negative ranges', () => {
+    const min = -10;
+    const max = -1;
+    const value = MathUtils.randomInt(min, max);
+    expect(value).toBeGreaterThanOrEqual(min);
+    expect(value).toBeLessThanOrEqual(max);
+    expect(Number.isInteger(value)).toBe(true);
+  });
+
+  test('randomInt should handle min and max being the same', () => {
+    const min = 5;
+    const max = 5;
+    const value = MathUtils.randomInt(min, max);
+    expect(value).toBe(min);
+    expect(value).toBe(max);
+  });
 });
