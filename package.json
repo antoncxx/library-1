@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --runInBand --coverage",
-    "validateCoverage": "node ./scripts/validateCoverage.js \"./coverage/coverage-summary.json\"",
+    "coverage": "node ./scripts/validateCoverage.js \"./coverage/coverage-summary.json\"",
     "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "keywords": [],
